@@ -68,7 +68,7 @@ export function NavItems() {
         <a href="#">Home</a>
       </NavItem>
       <NavItem>
-        <a href="#">Cars</a>
+        <a href="#">Projects</a>
       </NavItem>
       <NavItem>
         <a href="#">Services</a>
