@@ -6,6 +6,10 @@ import { slide as Menu } from "react-burger-menu";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../responsive";
 import menuStyles from "./menuStyles";
+import {
+  Link
+} from "react-router-dom";
+
 
 const ListContainer = styled.ul`
   ${tw`
@@ -48,16 +52,16 @@ export function NavItems() {
       <Menu right styles={menuStyles}>
         <ListContainer>
           <NavItem menu>
-            <a href="#">Home</a>
+          <Link to="/">Home</Link>
           </NavItem>
           <NavItem menu>
-            <a href="#">Projects</a>
+          <Link to="/projects">Projects</Link>
           </NavItem>
           <NavItem menu>
-            <a href="#">Services</a>
+          <Link to="/services">Services</Link>
           </NavItem>
           <NavItem menu>
-            <a href="#">Contact Us</a>
+          <Link to="/contact">Contact Us</Link>
           </NavItem>
         </ListContainer>
       </Menu>
@@ -66,16 +70,16 @@ export function NavItems() {
   return (
     <ListContainer>
       <NavItem>
-        <a href="#">Home</a>
+      <Link to="/">Home</Link>
       </NavItem>
       <NavItem>
-        <a href="#">Projects</a>
+      <Link to="/projects">Projects</Link>
       </NavItem>
       <NavItem>
-        <a href="#">Services</a>
+      <Link to="/services">Services</Link>
       </NavItem>
       <NavItem>
-        <a href="#">Contact Us</a>
+      <Link to="/contact">Contact Us</Link>
       </NavItem>
     </ListContainer>
   );

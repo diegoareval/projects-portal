@@ -31,8 +31,8 @@ const BaseButton = styled.button`
 `;
 
 const OutlinedButton = styled(BaseButton)`
+   background-color: #1d2124;
   ${tw`
-    bg-red-500
     hover:bg-transparent
     hover:text-red-500
     hover:border-red-500

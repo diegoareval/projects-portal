@@ -8,6 +8,8 @@ import { Footer } from "../../components/footer";
 import { AboutUs } from "./aboutUs";
 import { BookCard } from "../../components/bookCard";
 import { BookingSteps } from "./bookingSteps";
+import { TopProjects } from "./topProjects";
+import { projects } from "../../data/projects";
 
 const PageContainer = styled.div`
   ${tw`
@@ -32,6 +34,9 @@ const index = () => {
       <Marginer direction="vertical" margin="4em" />
       <AboutUs />
       <Marginer direction="vertical" margin="8em" />
+      <TopProjects title="Explore Our Top Sale Projects" projects={projects} />
+      <Marginer direction="vertical" margin="4em" />
+      <TopProjects title="New hottest Projects" projects={projects} />
       <Footer />
     </PageContainer>
   )
