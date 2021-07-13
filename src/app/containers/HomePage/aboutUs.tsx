@@ -24,6 +24,7 @@ const ImageContainer = styled.div`
   width: auto;
   height: 15em;
   margin-left: -50px;
+  transform: "translate(-50%,-50%)"
   img {
     width: auto;
     height: 100%;
@@ -72,6 +73,8 @@ const InfoText = styled.p`
     mt-4
   `};
 `;
+
+
 
 export function AboutUs() {
   return (

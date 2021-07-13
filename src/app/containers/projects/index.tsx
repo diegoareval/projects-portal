@@ -1,18 +1,9 @@
 import React from 'react'
 import styled from "styled-components";
 import tw from "twin.macro";
-import { Navbar } from '../../components/Navbar';
+import Card from '../../components/card';
+import MainContainer from '../container';
 
-const PageContainer = styled.div`
-  ${tw`
-    flex
-    flex-col
-    w-full
-    h-full
-    items-center
-    overflow-x-hidden
-  `}
-`;
 
 const Title = styled.h1`
   ${tw`
@@ -25,12 +16,44 @@ const Title = styled.h1`
   `};
 `;
 
+const BlocContainer = styled.div`
+  ${tw`
+  flex flex-wrap lg:h-full content-center
+  `};
+`;
+
+
+const CardContainer = styled.div`
+  ${tw`
+  container my-auto mx-auto sm:px-4 pt-10 pb-32
+  `};
+`;
+
+const GreyContainer = styled.div`
+  ${tw`
+  bg-gray-200
+  `};
+`;
+
 const Projects = () => {
   return (
-    <PageContainer>
-      <Navbar />
-       <Title>Projects</Title>
-    </PageContainer>
+    <MainContainer>
+      <Title>Projects</Title>
+      <GreyContainer>
+        <CardContainer>
+          <BlocContainer>
+            <Card />
+            <Card />
+            <Card />
+          </BlocContainer>
+          <BlocContainer>
+            <Card />
+            <Card />
+            <Card />
+          </BlocContainer>
+        </CardContainer>
+      </GreyContainer>
+    </MainContainer>
   )
 }
 
