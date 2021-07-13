@@ -2,6 +2,7 @@
 import { faEnvelope, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { Logo } from "../logo";
@@ -166,7 +167,7 @@ export function Footer() {
           <HeaderTitle>Our Links</HeaderTitle>
           <LinksList>
             <ListItem>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </ListItem>
             <ListItem>
               <a href="#">About Us</a>
@@ -186,10 +187,10 @@ export function Footer() {
           <HeaderTitle>Other Links</HeaderTitle>
           <LinksList>
             <ListItem>
-              <a href="#">FAQ</a>
+            <Link to="/faq">Faq</Link>
             </ListItem>
             <ListItem>
-              <a href="#">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
             </ListItem>
             <ListItem>
               <a href="#">Support</a>

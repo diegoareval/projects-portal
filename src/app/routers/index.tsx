@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import Contact from "../containers/contact";
+import Faq from "../containers/faq";
 import  HomePage  from "../containers/HomePage";
 import Projects from "../containers/projects";
 import Services from "../containers/services";
@@ -21,6 +22,9 @@ export default function Routers() {
           </Route>
           <Route path="/projects">
             <Projects />
+          </Route>
+          <Route path="/faq">
+            <Faq />
           </Route>
           <Route path="/">
             <HomePage />

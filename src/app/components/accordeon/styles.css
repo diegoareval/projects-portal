@@ -1,0 +1,53 @@
+.accordion {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #e8e8e8;
+    overflow: hidden;
+}
+.accordion .item {
+    cursor: default;
+    padding: 1.5rem 3rem;
+    word-break: break-all;
+}
+.accordion .item:first-child {
+    padding-top: 3rem;
+}
+.accordion .item:last-child {
+    padding-bottom: 3rem;
+}
+.accordion .item.opened .icon {
+    transform: rotate(90deg);
+    fill: #ba3e30;
+}
+.accordion .item:focus {
+    border: none;
+    outline: none;
+}
+.accordion .item:focus .header {
+    color: #ba3e30;
+}
+.accordion .header {
+    display: flex;
+    align-items: center;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #141414;
+}
+.accordion .title {
+    word-break: break-all;
+    word-wrap: break-word;
+    margin-right: 1em;
+}
+.accordion .icon {
+    flex: none;
+    transition: transform 0.1s ease-in-out;
+    margin-left: auto;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    fill: #555a66;
+}
+.accordion .content {
+    margin-top: 1rem;
+}
