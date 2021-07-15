@@ -37,7 +37,7 @@ const CardContainer = styled.div`
 
 const About = () => {
   return (
-    <MainContainer footer={false}>
+    <MainContainer footer={true}>
       <Title>About Us</Title> 
 <Container>
   <div className="w-full h-64 lg:w-1/2 lg:h-auto">

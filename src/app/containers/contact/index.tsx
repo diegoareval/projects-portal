@@ -1,21 +1,10 @@
 import React from 'react'
 import styled from "styled-components";
 import tw from "twin.macro";
-import { Navbar } from '../../components/Navbar';
 import { Button } from "../../components/button";
 import Social from '../../components/social';
+import MainContainer from '../container';
 
-
-const PageContainer = styled.div`
-  ${tw`
-    flex
-    flex-col
-    w-full
-    h-full
-    items-center
-    overflow-x-hidden
-  `}
-`;
 
 const Title = styled.h1`
   ${tw`
@@ -36,8 +25,7 @@ const Section = styled.section`
 
 const Contact = () => {
   return (
-    <PageContainer>
-      <Navbar />
+    <MainContainer footer={true}>
       <Title>Contact</Title>
       <Section className="text-gray-700 body-font relative">
         <div className="container px-5 py-24 mx-auto">
@@ -98,7 +86,7 @@ const Contact = () => {
           </div>
         </div>
       </Section>
-    </PageContainer>
+      </MainContainer>
   )
 }
 

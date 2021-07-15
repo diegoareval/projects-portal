@@ -25,7 +25,7 @@ const MainContainer = ({children, footer}: ContainerProps) => {
     <PageContainer>
       <Navbar />
         {children}
-     {footer &&  <Footer />}
+     {!footer &&  <Footer />}
     </PageContainer>
   )
 }

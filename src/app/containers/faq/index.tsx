@@ -20,7 +20,7 @@ const Title = styled.h1`
 
 const Faq = () => {
   return (
-    <MainContainer>
+    <MainContainer footer={false}>
        <Title>Faq</Title>
        <MainAccordeon/>
        <Marginer direction="vertical" margin="4em"/>
