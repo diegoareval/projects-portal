@@ -170,17 +170,17 @@ export function Footer() {
               <Link to="/">Home</Link>
             </ListItem>
             <ListItem>
-              <a href="#">About Us</a>
+            <Link to="/about">About Us</Link>
             </ListItem>
             <ListItem>
-              <a href="#">Services</a>
+            <Link to="/services">Services</Link>
             </ListItem>
             <ListItem>
-              <a href="#">Projects</a>
+            <Link to="/projects">Projects</Link>
             </ListItem>
-            <ListItem>
+            {/* <ListItem>
               <a href="#">Blog</a>
-            </ListItem>
+            </ListItem> */}
           </LinksList>
         </SectionContainer>
         <SectionContainer>
@@ -192,7 +192,7 @@ export function Footer() {
             <ListItem>
             <Link to="/contact">Contact Us</Link>
             </ListItem>
-            <ListItem>
+            {/* <ListItem>
               <a href="#">Support</a>
             </ListItem>
             <ListItem>
@@ -200,7 +200,7 @@ export function Footer() {
             </ListItem>
             <ListItem>
               <a href="#">Terms &amp; Conditions</a>
-            </ListItem>
+            </ListItem> */}
           </LinksList>
         </SectionContainer>
         <SectionContainer>

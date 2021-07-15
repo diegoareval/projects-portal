@@ -7,6 +7,7 @@ import { Footer } from "../../components/footer";
 
 interface ContainerProps {
     children: React.ReactNode
+    footer?: boolean
 }
 const PageContainer = styled.div`
   ${tw`
@@ -19,12 +20,12 @@ const PageContainer = styled.div`
   `}
 `;
 
-const MainContainer = ({children}: ContainerProps) => {
+const MainContainer = ({children, footer}: ContainerProps) => {
   return (
     <PageContainer>
       <Navbar />
         {children}
-      <Footer />
+     {footer &&  <Footer />}
     </PageContainer>
   )
 }
