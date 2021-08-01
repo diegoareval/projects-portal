@@ -8,7 +8,8 @@ import { ApiError } from '../../../lib/types/error';
 import { Faq } from '../../../lib/types/faq';
 import Accordion from './accordeon'
 import AccordionItem from './accordeonItem'
-
+import useBooleanToggler from "../../../lib/hooks/useBooleanToggler"
+import Skeleton from '../skeleton';
 
 
 const AccordeonContainer = styled.div`
@@ -18,10 +19,18 @@ const AccordeonContainer = styled.div`
 `;
 
 const MainAccordeon = () => {
+  const {
+    isToggled: isWorking,
+    reToggle: startWork,
+    unToggle: finishWork,
+  } = useBooleanToggler()
+
   const {showMessage} = useAlert()
   const [faqs, setFaqs] = useState<Faq[]>([])
    useEffect(() =>{
+    startWork()
     FaqApi.getFaqs().then((response)=> {
+      finishWork()
       if ((response as ApiError).message) {
         const {message} = response as ApiError;
         showMessage(message, TOAST_TYPE.ERROR)
@@ -34,6 +43,7 @@ const MainAccordeon = () => {
 
   return (
        <AccordeonContainer>
+         
        <Accordion>
          {faqs.map((faq: Faq) => {
            return (
@@ -43,6 +53,7 @@ const MainAccordeon = () => {
            )
          })}
       </Accordion>
+
       </AccordeonContainer>
   )
 }
