@@ -1,0 +1,227 @@
+.noty_theme__bootstrap-v4.noty_bar {
+  margin: 4px 0;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+.noty_theme__bootstrap-v4.noty_bar .noty_body {
+  padding: 0.75rem 1.25rem;
+}
+.noty_theme__bootstrap-v4.noty_bar .noty_buttons {
+  padding: 10px;
+}
+.noty_theme__bootstrap-v4.noty_bar .noty_close_button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: 0.5;
+  background: transparent;
+}
+.noty_theme__bootstrap-v4.noty_bar .noty_close_button:hover {
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: 0.75;
+}
+
+.noty_theme__bootstrap-v4.noty_type__alert,
+.noty_theme__bootstrap-v4.noty_type__notification {
+  background-color: #fff;
+  color: inherit;
+}
+
+.noty_theme__bootstrap-v4.noty_type__warning {
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+  border-color: #faebcc;
+}
+
+.noty_theme__bootstrap-v4.noty_type__error {
+  background-color: #a94442;
+  color: #f2dede;
+  border-color: #a94442d8;
+}
+
+.noty_theme__bootstrap-v4.noty_type__info,
+.noty_theme__bootstrap-v4.noty_type__information {
+  background-color: #20749e;
+  color: #d9edf7;
+  border-color: #20749e;
+}
+
+.noty_theme__bootstrap-v4.noty_type__success {
+  background-color: #3c763d;
+  color: #fff;
+  border-color: #3c763de2;
+}
+
+.success {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #90ee90;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.success:hover {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.success span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.success span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.success:hover span {
+  padding-right: 25px;
+}
+
+.success:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.error {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #fa8072;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.error:hover {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.error span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.error span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.error:hover span {
+  padding-right: 25px;
+}
+
+.error:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.info {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #87ceeb;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.info:hover {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.info span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.info span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.info:hover span {
+  padding-right: 25px;
+}
+
+.info:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.warning {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #efd192;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.warning:hover {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.warning span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.warning span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.warning:hover span {
+  padding-right: 25px;
+}
+
+.warning:hover span:after {
+  opacity: 1;
+  right: 0;
+}

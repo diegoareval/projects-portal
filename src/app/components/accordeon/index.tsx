@@ -1,6 +1,11 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from "styled-components";
 import tw from "twin.macro";
+import FaqApi from '../../../lib/api/faqs';
+import useAlert from '../../../lib/hooks/useAlert';
+import { TOAST_TYPE } from '../../../lib/types/alert';
+import { ApiError } from '../../../lib/types/error';
+import { Faq } from '../../../lib/types/faq';
 import Accordion from './accordeon'
 import AccordionItem from './accordeonItem'
 
@@ -12,35 +17,31 @@ const AccordeonContainer = styled.div`
   `}
 `;
 
-
 const MainAccordeon = () => {
+  const {showMessage} = useAlert()
+  const [faqs, setFaqs] = useState<Faq[]>([])
+   useEffect(() =>{
+    FaqApi.getFaqs().then((response)=> {
+      if ((response as ApiError).message) {
+        const {message} = response as ApiError;
+        showMessage(message, TOAST_TYPE.ERROR)
+        console.log(response);
+      } else {
+        setFaqs(response as Faq[])
+      }
+    })
+   }, [])
+
   return (
        <AccordeonContainer>
        <Accordion>
-        <AccordionItem title="What is Responsive Design?">
-          Lorem ipsum dolor sit amet
-        </AccordionItem>
-        <AccordionItem title="What is Responsive Design?">
-          Lorem ipsum dolor sit amet
-        </AccordionItem>
-        <AccordionItem title="What is Responsive Design?">
-          Lorem ipsum dolor sit amet
-        </AccordionItem>
-        <AccordionItem title="How to contact us">
-          adipisci sit earum molestiae doloribus quisquam esse quaerat
-        </AccordionItem>
-        <AccordionItem title="Problems we solve">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ipsam
-          numquam quis, possimus at aspernatur quia, adipisci sit earum
-          molestiae doloribus quisquam esse quaerat nulla facilis sunt beatae
-          tempora laudantium.
-        </AccordionItem>
-        <AccordionItem title="Who are we?">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ipsam
-          numquam quis, possimus at aspernatur quia, adipisci sit earum
-          molestiae doloribus quisquam esse quaerat nulla facilis sunt beatae
-          tempora laudantium.
-        </AccordionItem>
+         {faqs.map((faq: Faq) => {
+           return (
+            <AccordionItem title={faq.question} key={faq.id}>
+            {faq.answer}
+          </AccordionItem>
+           )
+         })}
       </Accordion>
       </AccordeonContainer>
   )

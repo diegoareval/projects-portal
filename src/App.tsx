@@ -3,7 +3,8 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import './App.css';
 import Routers from './app/routers';
-
+import './toast/bootstrap-v4.css'
+import './toast/noty.css'
 
 const AppContainer = styled.div`
   ${tw`
