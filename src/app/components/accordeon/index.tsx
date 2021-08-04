@@ -9,7 +9,6 @@ import { Faq } from '../../../lib/types/faq';
 import Accordion from './accordeon'
 import AccordionItem from './accordeonItem'
 import useBooleanToggler from "../../../lib/hooks/useBooleanToggler"
-import Skeleton from '../skeleton';
 
 
 const AccordeonContainer = styled.div`
@@ -25,7 +24,7 @@ const MainAccordeon = () => {
     unToggle: finishWork,
   } = useBooleanToggler()
 
-  const {showMessage} = useAlert()
+  const {showMessage} = useAlert();
   const [faqs, setFaqs] = useState<Faq[]>([])
    useEffect(() =>{
     startWork()

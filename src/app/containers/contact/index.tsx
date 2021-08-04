@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from "styled-components";
 import tw from "twin.macro";
 import { Button } from "../../components/button";
 import Social from '../../components/social';
 import MainContainer from '../container';
-
+import useBooleanToggler from "../../../lib/hooks/useBooleanToggler"
+import useAlert from '../../../lib/hooks/useAlert';
+import { TOAST_TYPE } from '../../../lib/types/alert';
+import { Contact, ContactType } from '../../../lib/types/contacts';
+import ContactApi from '../../../lib/api/contacts';
 
 const Title = styled.h1`
   ${tw`
@@ -23,7 +27,44 @@ const Section = styled.section`
   `};
 `;
 
-const Contact = () => {
+const ContactComponent = () => {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
+  const {
+    isToggled: isWorking,
+    reToggle: startWork,
+    unToggle: finishWork,
+  } = useBooleanToggler();
+
+  const {showMessage} = useAlert();
+
+  const sendData  = () => {
+    if(name.length< 1 || email.length< 1 || message.length< 1){
+      showMessage("you must fill all fields", TOAST_TYPE.WARNING)
+    }
+    startWork();
+    const payload: Contact ={
+      name, email, message, type: ContactType.CONTACT, bookDate: new Date()
+    };
+    ContactApi.createContact(payload).then(response => {
+      finishWork()
+      if(response === true) {
+        clear();
+        showMessage("your message has been successfully sent", TOAST_TYPE.SUCCESS)
+      } else {
+        showMessage("your message has not been sent", TOAST_TYPE.ERROR)
+      }
+    })
+  }
+
+  const clear = () => {
+    setEmail("");
+    setMessage("");
+    setName("");
+  }
+
   return (
     <MainContainer footer={true}>
       <Title>Contact</Title>
@@ -42,6 +83,8 @@ const Contact = () => {
                     Name
                   </label>
                   <input
+                   onChange={({target})=> {setName(target.value)}}
+                  value={name}
                     type="text"
                     id="name"
                     name="name"
@@ -57,6 +100,8 @@ const Contact = () => {
                     Email
                   </label>
                   <input
+                   onChange={({target})=> {setEmail(target.value)}}
+                  value={email}
                     type="email"
                     id="email"
                     name="email"
@@ -72,6 +117,8 @@ const Contact = () => {
                     Message
                   </label>
                   <textarea
+                  value={message}
+                     onChange={({target})=> {setMessage(target.value)}}
                     id="message"
                     name="message"
                     className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
@@ -79,7 +126,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="p-2 w-full">
-                <Button text="Submit" />
+                <Button onClick={isWorking? ()=> {}: sendData} text={isWorking? "Loading...": "Submit"} />
               </div>
              <Social/>
             </div>
@@ -90,4 +137,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default ContactComponent

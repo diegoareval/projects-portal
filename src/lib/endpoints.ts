@@ -1,8 +1,8 @@
 
 
-const BASE_API_URL = process.env.REACT_APP_BASE_API_URL
-const FAQ_ENDPOINT = `${BASE_API_URL}faq`
-
+const BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
+const FAQ_ENDPOINT = `${BASE_API_URL}faq`;
+const CONTACT_ENDPOINT = `${BASE_API_URL}contact`
 export {
-    FAQ_ENDPOINT
+    FAQ_ENDPOINT, CONTACT_ENDPOINT
 }
