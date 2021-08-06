@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { SettingContext } from "../../../provider/SettingProvider";
 import { SCREENS } from "../../components/responsive";
 
 const AboutUsContainer = styled.div`
@@ -77,24 +78,16 @@ const InfoText = styled.p`
 
 
 export function AboutUs() {
+  const setting = useContext(SettingContext);
   return (
     <AboutUsContainer>
       <ImageContainer>
         <img alt={"about"} src={"https://www.logmein.com/-/media/27c99c2d419d41c4b94a9cd717772c32.svg?h=434&w=904&la=en&hash=3C6F6E5B392E1A3A214F6DC6DD6495A7"} />
       </ImageContainer>
       <InfoContainer>
-        <Title>Feel free to book a demo. </Title>
+        <Title>{setting.us_title} </Title>
         <InfoText>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+         {setting.us_description}
         </InfoText>
       </InfoContainer>
     </AboutUsContainer>

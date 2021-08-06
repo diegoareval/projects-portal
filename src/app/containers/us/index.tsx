@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from "styled-components";
 import tw from "twin.macro";
+import { SettingContext } from '../../../provider/SettingProvider';
 import { Button } from '../../components/button';
 import MainContainer from '../container';
+import {Link} from "react-router-dom"
 
 
 const Title = styled.h1`
@@ -36,22 +38,24 @@ const CardContainer = styled.div`
 
 
 const About = () => {
+  const setting = useContext(SettingContext);
   return (
     <MainContainer footer={true}>
       <Title>About Us</Title> 
 <Container>
   <div className="w-full h-64 lg:w-1/2 lg:h-auto">
-    <img className="h-full w-full object-cover" src="https://images.pexels.com/photos/326508/pexels-photo-326508.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Winding mountain road"/>
+    <img className="h-full w-full object-cover" src={setting.us_image} alt="Winding mountain road"/>
   </div>
   <CardContainer>
     <div className="flex flex-col p-12 md:px-16">
-      <h2 className="text-2xl font-medium uppercase text-green-800 lg:text-4xl">Dev Solutions</h2>
+  <h2 className="text-2xl font-medium uppercase text-green-800 lg:text-4xl">{setting.company_name}</h2>
       <p className="mt-4">
-        Our main commitment is help and provide you the best solution in the market, we provide solutions since 2014 and 
-        we helped hundreds of enterprises.
+       {setting.us_description}
       </p>
       <ButtonContainer>
-        <Button text="Check out our content"/>
+       <Link to="/projects">
+       <Button text="Check out our content"/>
+       </Link>
       </ButtonContainer>
     </div>
   </CardContainer>

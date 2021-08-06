@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { faEnvelope, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { SettingContext } from "../../../provider/SettingProvider";
 import { Logo } from "../logo";
 
 const FooterContainer = styled.div`
@@ -153,14 +154,14 @@ const SmallText = styled.h6`
 `;
 
 export function Footer() {
+  const setting = useContext(SettingContext);
   return (
     <FooterContainer>
       <InnerContainer>
         <AboutContainer>
           <Logo color="white" bgColor="dark" />
           <AboutText>
-           Dev solutions is an efficient way to solve technologies issues in the enterprises and provide them the best tools to optimize process
-           and resources also help them to update with current high level performance.
+           {setting.main_subtitle}
           </AboutText>
         </AboutContainer>
         <SectionContainer>
@@ -218,13 +219,13 @@ export function Footer() {
             <RedIcon>
               <FontAwesomeIcon icon={faEnvelope} />
             </RedIcon>
-            <SmallText>info@devs.com</SmallText>
+          <SmallText>{setting.company_email}</SmallText>
           </HorizontalContainer>
         </SectionContainer>
       </InnerContainer>
       <BottomContainer>
         <CopyrightText>
-          Copyright &copy; {new Date().getFullYear()} Devs solutions. All rights
+          Copyright &copy; {new Date().getFullYear()} {setting.company_name}. All rights
           reserved.
         </CopyrightText>
       </BottomContainer>
