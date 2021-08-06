@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
 import BlobImg from "../../../assets/images/blob.svg";
 import { SCREENS } from "../../components/responsive";
 import { Button } from "../../components/button";
+import { SettingContext } from "../../../provider/SettingProvider";
 
 const TopSectionContainer = styled.div`
   min-height: 400px;
@@ -141,12 +142,13 @@ const ButtonsContainer = styled.div`
 `;
 
 export function TopSection() {
+  const setting = useContext(SettingContext);
   return (
     <TopSectionContainer>
       <LeftContainer>
-        <Slogan>Best technologies services, web and mobile development.</Slogan>
+  <Slogan>{setting.main_title}</Slogan>
         <Description>
-         We provide the best technologies solution and high quality software usign modern tech settings.
+        {setting.main_subtitle}
         </Description>
         <ButtonsContainer>
           <Button text="Book Your Demo" />

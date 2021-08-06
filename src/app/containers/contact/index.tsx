@@ -31,6 +31,7 @@ const ContactComponent = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  
 
   const {
     isToggled: isWorking,

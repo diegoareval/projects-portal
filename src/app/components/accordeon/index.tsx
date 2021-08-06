@@ -25,7 +25,8 @@ const MainAccordeon = () => {
   } = useBooleanToggler()
 
   const {showMessage} = useAlert();
-  const [faqs, setFaqs] = useState<Faq[]>([])
+  const [faqs, setFaqs] = useState<Faq[]>([]);
+
    useEffect(() =>{
     startWork()
     FaqApi.getFaqs().then((response)=> {
@@ -38,7 +39,10 @@ const MainAccordeon = () => {
         setFaqs(response as Faq[])
       }
     })
+     // eslint-disable-next-line
    }, [])
+
+console.log(isWorking);
 
   return (
        <AccordeonContainer>

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { SettingContext } from '../../../provider/SettingProvider';
 
 const Social = () => {
-
+    const setting = useContext(SettingContext);
 const ImageContainer = styled.a`
   ${tw`
   text-gray-700  relative
@@ -37,10 +38,10 @@ p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center
 
     return (
         <SocialContainer>
-            <Email>diego2000avelar@gmail.com</Email>
+            <Email>{setting.company_email}</Email>
             <br />
             <Address>
-          Tejutla City, CH 0404
+                {`${setting.address} ${setting.codigo_postal}`}
         </Address>
         <br />
             <Images>
